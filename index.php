@@ -213,25 +213,29 @@ $footer = <<<FOOTER
 <footer class="footer mt-auto py-3 bg-dark text-light">
     <div class="container text-center">
         <div class="row">
+            
             <div class="col-md-6">
-                <p>Контактная информация:</p>
-                <p>Email: example@example.com</p>
-                <p>Телефон: +123 456 789</p>
+                <a href="https://opensource.org/licenses/MIT" target="_blank">Лицензия MIT:
+<!--img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/MIT_logo.svg/1280px-MIT_logo.svg.png" alt="MIT License" style="width: 50px; height: auto;"-->
+                    <div class="svg_mit">
+    <img class="svg_mit" src="../../../../aekap.api/images/mit_icon.svg" alt="MIT License" >
+                    </div>
+                </a>
             </div>
             <div class="col-md-6">
-                <a href="https://opensource.org/licenses/MIT" target="_blank">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/MIT_logo.svg/1280px-MIT_logo.svg.png" alt="MIT License" style="width: 50px; height: auto;">
-             <div class="svg_mit">       
-                    <img src="../../../../aekap.api/images/mit_icon.svg" >
-             </div>                    
-                Лицензия MIT
-                 </a>
+                <h5>Контакты:</h5>
+                git: 
+                <p>Email: ae@c-europe.eu
+                <br>Viber: +420 792 455 840
+                <br>git:  <a href="https://github.com/alexeist/LaTeXP-decoder/">https://github.com/alexeist/LaTeXP-decoder/</a>
+                </p>
             </div>
         </div>
     </div>
-    </div>
-    </div>
-</footer>
+  </footer>
+ </div>
+</div>
+
 FOOTER;
 
 $htmlOutput = <<<HTML
