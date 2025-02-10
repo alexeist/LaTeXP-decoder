@@ -1,0 +1,351 @@
+﻿ccc # **** *Команды форматирования LaTexP* ** 
+
+-- ccc  ####  Расширенные команды (только в LaTexP) -  версия 1.1.2
+- 
+   ######      "######" в начале строки ->   tag h6.
+   #####       "#####"  в начале строки ->   tag h5. 
+   ####        "####"   в начале строки ->   tag h4.
+   ###         "###" в начале строки -> tag h3.
+   ##          "##" в начале строки -> tag h2.
+   #           "#" в начале строки -> tag h1.
+
+ 
+###  ccc  "ccc плюс пробел"  в начале строки форматировать по центру
+-  
+##### Цвет шрифта
+
+
+   **** Выражение начинающееся учетверенными звездочками **  выделяется зеленым цветом
+ 
+-  
+***Выражение начинающееся тройными звездочками ** 
+
+  выделяется красным цветом
+-  
+**Выражение начинающееся двойными звездочками**  выделяет синим цветом
+-  
+  ****Окончание** ***раскрашивания** 
+  **текста** 
+   заканчивается переносом строки или двойной звездочкой // (введено для совместимости с классическим LaTeX )
+ 
+-  * Выражение помещенное в одинарные звездочки*  выделяет болдом // (сделано для совместимости с текстами из Вайбера и других соцсетей)
+
+-  
+-  
+##### Ссылки:
+
+   ```  `,`,`  (три обратные кавычки) делает из строки ссылку
+
+
+
+-    
+-  
+##### Форматирование абзаца  
+   -__        (минус плюс 2 пробела) вставляет перенос строки //  (дефисы (-) и математические минусы \(-\) ставьте без двух пробелов после них)
+
+--     --_       (два минуса плюс пробел)вставляет перенос строки и строку выделяет курсивом
+
+-     "-""-""-"  (три тире подряд) вставляет разделительную линию
+
+-  //  `//`            (двойной слеш и пробел) - комментарый ббудет выведен серым цветом
+
+-   ! ! !       (три воскл. знака подряд) -  текст вообще не выводится
+
+ !!!          это невидимый комментарий он не выводится на экран его можно использовать для установки специальных слов, напр титлов браузера, адреса картинок и под. 
+
+-  ___          (_ _ _)  -тройное подчеркивание делает строку уменьшенным шрифтом
+-  //  *Примечания:*
+-  // Все комманды действуют до первого появления невидимого символа конец строки и перевод каретки *(клавиша ENTER)*
+-  // Cсылка заканчивается символом конец строки и перевод каретки *(клавиша ENTER)* 
+-  // Пустые строки в документе игнорируются!!!
+-  // Обратите внимание, конец строки означает лишь окончание инструкции и не переводит строку в итоговом документе.
+-  // перевод строки в итоговом документе делается исключительно согласно правилам выше и правилам LaTeX и MathJax
+-  // цвет формул обработанных MathJax  всегда фиолетовый
+
+
+---  
+
+-     
+-    
+-     
+ccc  ###  **Основные команды LaTex**
+-- 
+-  Выражения, подлежащее обработке MathJax надо помещать в экранированные обратным слешем скобки:
+
+-      круглые () - формула будет в строке, 
+-      квадратные [] - формула будет отформатирована по центру 
+-      
+-   Отдельные элементы сложных формул, одночлены и операторы полезно помещать в фигурные скобки {}
+
+
+--    ###### ПРИМЕР:
+
+
+ `\(` *содержание формулы*  `\)`  ___ для форматирования в строке \( c = \frac{a}{b} \)
+ 
+-  ccc `\[` *содержание формулы*  `\]` ___ для форматирования по центру страницы \[ c = \frac{a}{b} \] 
+-    
+---
+-   
+-    
+ccc ##  Кодировка MathJax
+
+
+--    **1. Математические символы:**
+-  ccc  `+`, `-`, `\pm`, `\mp`, `\times`, `\div`, `\cdot`, `\ast`, `/`, `=`, `a\sim b` 
+- ccc  `^надстрочный`, `_подстрочный`  `\lhd`, `\rhd`, `\unlhd`, `\unrhd`, `\tilde{8}`(или `\~{8}`),  `\bar{a}`
+
+ \[
+     {+} ,  {-} , {\pm}, {\mp}, {\times}, {\div}, {\cdot}, {\ast}, {/} ,  {=} , {a \sim b}
+ \]
+ \[ {^{надстрочный}}, {_{подстрочный}}, \lhd, \rhd, \unlhd, \unrhd, \tilde{8} , \bar{a}
+ \]
+-  
+--    **1а. Греческие символы:**
+ 
+ccc    `\alpha`, `\beta`, `\gamma`, `\delta`, `\epsilon`, `\zeta`, `\eta`, `\theta`, `\iota`, `\kappa`, `\lambda`, 
+ccc  `\mu`, `\nu`, `\xi`, `\pi`, `\rho`, `\sigma`, `\tau`, `\upsilon`, `\phi`, `\chi`, `\psi`, `\omega`
+
+\[ 
+     {\alpha}, {\beta}, {\gamma}, {\delta}, {\epsilon}, {\zeta}, {\eta}, {\theta}, {\iota}, {\kappa}, {\lambda},
+\]
+\[ {\mu}, {\nu}, {\xi}, {\pi}, {\rho}, {\sigma}, {\tau}, {\upsilon}, {\phi}, {\chi}, {\psi}, {\omega}
+ \]
+-  
+-   
+ccc  `\Gamma`, `\Delta`, `\Theta`, `\Lambda`, `\Xi`, `\Pi`, `\Sigma`, `\Upsilon`, `\Phi`, `\Psi`, `\Omega`
+\[   
+      {\Gamma}, {\Delta}, {\Theta}, {\Lambda}, {\Xi}, {\Pi}, {\Sigma}, {\Upsilon}, {\Phi}, {\Psi}, {\Omega}
+\]
+---
+--   **2. Функции**:
+ ccc  -   `\sin`, `\cos`, `\tan`, `\cot`, `\sec`, `\csc`
+ ccc  -   `\arcsin`, `\arccos`, `\arctan`
+ ccc  -  `\sinh`, `\cosh`, `\tanh`, `\coth`
+ ccc  -  `\log`, `\ln`, `\exp`
+ ccc  -  `\max`, `\min`
+\[ {\sin}, {\cos}, {\tan}, {\cot}, {\sec}, {\csc},\]
+\[   {\arcsin}, {\arccos}, {\arctan},\]
+\[   {\sinh}, {\cosh}, {\tanh}, {\coth},\]
+\[    {\log}, {\ln}, {\exp},\]
+\[   {\max}, {\min}\]
+   
+---
+
+-- **3. Специальные символы**:
+ccc     `\infty`, `\partial`, `\nabla`, `\forall`, `\exists`, `\emptyset`, `\varnothing`,
+
+ccc     `\mathbb{R}`, `\mathbb{C}`, `\mathbb{Q}`, `\mathbb{Z}`, `\mathbb{N}`,
+
+ccc    `\mathcal{A}`, `\mathcal{B}`, `\mathcal{C}`, `\mathcal{D}`, `\mathcal{E}`, `\mathcal{F}`, `\mathcal{G}`,
+ 
+ccc    `\mathcal{H}`, `\mathcal{I}`, `\mathcal{J}`, `\mathcal{K}`, `\mathcal{L}`, `\mathcal{M}`, `\mathcal{N}`,
+ 
+ccc    `\mathcal{O}`, `\mathcal{P}`, `\mathcal{Q}`, `\mathcal{R}`, `\mathcal{S}`, `\mathcal{T}`, `\mathcal{U}`, 
+
+ccc    `\mathcal{V}`, `\mathcal{W}`, `\mathcal{X}`, `\mathcal{Y}`, `\mathcal{Z}`
+
+\[{\infty}, {\partial}, {\nabla}, {\forall}, {\exists}, {\emptyset}, {\varnothing},\]
+\[{\mathbb{R}}, {\mathbb{C}}, {\mathbb{Q}}, {\mathbb{Z}}, {\mathbb{N}},\]
+\[{\mathcal{A}}, {\mathcal{B}}, {\mathcal{C}}, {\mathcal{D}}, {\mathcal{E}}, {\mathcal{F}}, {\mathcal{G}}, \]
+\[{\mathcal{H}}, {\mathcal{I}}, {\mathcal{J}}, {\mathcal{K}}, {\mathcal{L}}, {\mathcal{M}}, {\mathcal{N}}, \]
+\[{\mathcal{O}}, {\mathcal{P}}, {\mathcal{Q}}, {\mathcal{R}}, {\mathcal{S}}, {\mathcal{T}}, {\mathcal{U}}, \]
+\[{\mathcal{V}}, {\mathcal{W}}, {\mathcal{X}}, {\mathcal{Y}}, {\mathcal{Z}},\]
+
+---  
+ 
+
+--  **4. Дробные и корневые выражения**:
+ccc   - `\frac{a}{b}`,  `\sqrt{x}`, `\sqrt[n]{x^2}`
+\[ \frac{a}{b},  \sqrt{x}, \sqrt[n]{x^2}\]
+
+---   
+
+
+--  **5. Суммы и интегралы**:
+ccc   - `\sum`, `\prod`, `\int`, `\oint`, `\iint`, `\iiint`, `\iiiint`
+ \[ 
+   {\sum}, {\prod}, {\int}, {\oint}, {\iint}, {\iiint}, {\iiiint}
+ \]
+----
+ 
+--  **6. Матрицы**:
+--       
+ 
+ccc -  '\ begin{matrix} a & b \\ c & d \ end{matrix}'
+\[
+   \begin{matrix} a & b \\ c & d \end{matrix}
+\]
+   
+ccc -  `\ begin{pmatrix} a & b \\ c & d \end{pmatrix}` 
+  \[ \begin{pmatrix} a & b \\ c & d \end{pmatrix}\]
+   
+ccc - `\ begin{bmatrix} a & b \\ c & d \end{bmatrix}`
+    \[\begin{bmatrix} a & b \\ c & d \end{bmatrix}\]
+   
+ccc -    `\ begin{vmatrix} a & b \\ c & d \end{vmatrix}`
+    \[\begin{vmatrix} a & b \\ c & d \end{vmatrix}\]
+
+ccc -  `\ begin{Vmatrix} a & b \\ c & d \end{Vmatrix}`
+     \[\begin{Vmatrix} a & b \\ c & d \end{Vmatrix}\]
+---
+
+--  **7. Операторы**:
+
+ccc -   `\pm`, `\mp`, `\times`, `\div`, `\cdot`, `\ast`, `\star`, `\circ`, `\bullet`, `\oplus`,
+ccc -   `\ominus`, `\otimes`, `\oslash`, `\odot`, `\dagger`, `\ddagger`, `\cap`, `\cup`, `\uplus`, 
+ccc -   `\sqcap`, `\sqcup`, `\triangleleft`, `\triangleright`, `\bigtriangleup`, `\bigtriangledown`, 
+ccc -   `\lhd`, `\rhd`, `\unlhd`, `\unrhd`
+\[        \pm,     \mp, \times,   \div, \cdot,   \ast,    \star,    \circ, \bullet, \oplus, \]
+\[        \ominus, \otimes, \oslash, \odot, \dagger, \ddagger, \cap, \cup, \uplus, \]
+\[        \sqcap, \sqcup, \triangleleft, \triangleright, \bigtriangleup, \bigtriangledown, \]
+\[        \lhd, \rhd, \unlhd, \unrhd\]
+
+---
+
+
+-- **8. Стрелки**:
+ccc -    `\leftarrow`, `\rightarrow`, `\uparrow`, `\downarrow`
+ccc -    `\Leftarrow`, `\Rightarrow`, `\Uparrow`, `\Downarrow`
+ccc -    `\longleftarrow`, `\longrightarrow`, `\Longleftarrow`, `\Longrightarrow`
+ccc -    `\mapsto`,
+ccc -    `\hookleftarrow`, `\hookrightarrow`, `\leftharpoonup`, `\rightharpoonup`,
+ccc -    `\leftharpoondown`, `\rightharpoondown`, `\rightleftharpoons`, `\leftrightarrows`
+
+
+\[       \leftarrow ,  \rightarrow ,  \uparrow ,  \downarrow , \]
+\[       \Leftarrow ,  \Rightarrow ,  \Uparrow ,  \Downarrow ,\]
+\[       \longleftarrow ,  \longrightarrow ,  \Longleftarrow ,  \Longrightarrow , \] 
+\[       \mapsto , \]
+\[       \hookleftarrow ,  \hookrightarrow ,  \leftharpoonup ,  \rightharpoonup ,\]
+\[      \leftharpoondown ,  \rightharpoondown ,  \rightleftharpoons ,  \leftrightarrows \] 
+
+
+--- 
+--  **9. Разделители**:
+ccc   - `\left(`, `\right)`, `\left[`, `\right]`, `\left\{`, `\right\}`, `\left|`, `\right|`, `\left\|`, `\right\|`
+   \[
+   
+     \left( ,  \right) ,  \left[ ,  \right] ,  \left\{ ,  \right\} ,  \left| ,  \right| ,  \left\| ,  \right\| 
+   \]
+--- 
+
+--  **10. Прочие**:
+ccc    - `\ldots`, `\cdots`, `\vdots`, `\ddots`
+    - `\hat{a}`, `\check{a}`, `\breve{a}`, `\acute{a}`, `\grave{a}`, `\tilde{a}`, `\bar{a}`, `\vec{a}`, `\dot{a}`, `\ddot{a}`
+\[
+     \ldots ,  \cdots ,  \vdots ,  \ddots, 
+      \hat{a} ,  \check{a} ,  \breve{a} ,  \acute{a} ,  \grave{a} ,  \tilde{a} ,  \bar{a} ,  \vec{a} ,  \dot{a} ,  \ddot{a} 
+
+
+\]
+---
+-- 
+-- 
+ccc  ### Примеры использования
+-- 
+ **1.Простая дробь**:
+   ```latex
+   \frac{a}{b}
+   ```
+\[    \frac{a}{b} \]
+
+-- **2. Квадратный корень**:
+   ```latex
+   \sqrt{x}
+   ```
+\[   \sqrt{x} \]
+-- **3. Сумма**:
+   ```latex
+   \sum_{i=1}^{n} i
+   ```
+   \[ \sum_{i=1}^{n} i \]
+
+--  **4. Интеграл**:
+   ```latex
+   \int_{a}^{b} f(x) \, dx
+   ```
+   \[ \int_{a}^{b} f(x) \, dx \]
+
+--  **5. Матрица**:
+   ```latex
+   \ begin{pmatrix}
+   a & b \\ 
+   c & d 
+   \ end{pmatrix} 
+ ```
+
+\[
+\begin{pmatrix}
+   a & b \\
+   c & d
+   \end{pmatrix}
+
+
+\]
+
+---
+--  
+
+  
+
+ccc ## Расшифровка некоторых математических символов
+
+-- ### **1. Гиперболический синус (sinh)**
+
+Гиперболический синус — это гиперболическая функция, аналогичная тригонометрическому синусу. Она определяется следующим образом:
+
+\[ \sinh(x) = \frac{e^x {-} e^{{-}x}}{2} \]
+
+-- ##### Где:
+ \( e \) — основание натурального логарифма (примерно равно 2.71828).
+- \( x \) — аргумент функции.
+-- 
+
+-- 
+-- 
+--  ### **2. Гиперболический косинус (cosh)**
+
+Гиперболический косинус — это гиперболическая функция, аналогичная тригонометрическому косинусу. Она определяется следующим образом:
+
+\[ \cosh(x) = \frac{e^x + e^{{-}x}}{2} \]
+
+-- #####  Где:
+ \( e \) — основание натурального логарифма.
+- \( x \) — аргумент функции.
+-- 
+-- 
+--
+
+--  ### **3. Произведение**  `(\prod)`
+
+Символ произведения \(\prod\) используется для обозначения произведения последовательности чисел. Он аналогичен символу суммы \(\sum\), но вместо сложения элементов последовательности, он их перемножает.
+
+ 
+
+
+\[ \prod_{i=1}^{n} a_i = a_1 \cdot a_2 \cdot \ldots \cdot a_n \]
+
+-- #####  Где:
+\( i \) — индекс элемента последовательности.
+- \( a_i \) — элементы последовательности.
+- \( n \) — количество элементов в последовательности.
+
+---
+
+--  ### **4. Круговой интеграл**
+ -`(\oint)`
+
+Символ кругового интеграла \(\oint\) используется для обозначения интеграла по замкнутому контуру. Он часто встречается в комплексном анализе и векторном исчислении.
+--
+-- ##### Пример использования  кругового интеграла:
+
+\[ \oint_C f(z) \, dz \]
+
+-- ##### Где:
+\( C \) — замкнутый контур.
+- \( f(z) \) — функция, интегрируемая по контуру.
+- \( z \) — комплексная переменная.
+
+
+
