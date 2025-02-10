@@ -1,13 +1,13 @@
 <?php
 $debug = 0;
-$ver   = "1.0.2";                                 // colored  included
+$ver   = "1.1.2";                                 // colored  included
 define ('DATA_DIR',        "data");
 define ('DS', DIRECTORY_SEPARATOR);
 define ('FILE_EXTENSION', "tex");                //  расширения файлов ЛаТекс
 
 
 
-$cat              = (array_key_exists('cat', $_REQUEST))?  $_REQUEST['cat']:"chatGPT";
+$cat              = (array_key_exists('cat', $_REQUEST))?  $_REQUEST['cat']:"LaTexP_MathJax help";
 $tex              = (array_key_exists('tex', $_REQUEST))?  $_REQUEST['tex']:"learn_LaTexP";
 $show_row_numbers = (array_key_exists('show_row_numbers', $_REQUEST))? $_REQUEST['show_row_numbers']:false;
 $tex_path         = DATA_DIR. DS . $cat . DS . $tex . "." . FILE_EXTENSION;
