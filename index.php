@@ -1,7 +1,6 @@
 <?php
-$ver   = 1.0.1;
-$debug = 1;
-// 
+$debug = 0;
+$ver   = "1.0.2";                                 // colored  included
 define ('DATA_DIR',        "data");
 define ('DS', DIRECTORY_SEPARATOR);
 define ('FILE_EXTENSION', "tex");                //  расширения файлов ЛаТекс
@@ -94,23 +93,24 @@ return $ret;
 function markdown_to_html($text){     
 //    $text = preg_replace('/### Me: (.*?)chatGPT:/s', "<p class='me'>\$1</p>", $text);
 //    $text = preg_replace('/### chatGPT: (.*?)Me:/s', "<p class='chatGPT'>\$1</p>", $text);
-    $text = preg_replace('/###### (.*?)\n/', '<h6>$1</h6>',                       $text);
-    $text = preg_replace('/##### (.*?)\n/',  '<h5>$1</h5>',                       $text);
-    $text = preg_replace('/#### (.*?)\n/',   '<h4>$1</h4>',                       $text);
-    $text = preg_replace('/### (.*?)\n/',    '<h3>$1</h3>',                       $text);
-    $text = preg_replace('/## (.*?)\n/',     '<h2>$1</h2>',                       $text);
-    $text = preg_replace('/# (.*?)\n/',      '<h1>$1</h1>',                       $text); 
-    $text = preg_replace('/ccc (.*?)\n/',    '<center>$1</center>',               $text);
+    $text = preg_replace('/######\s(.*?)\n/', '<h6>$1</h6>',                       $text);
+    $text = preg_replace('/#####\s(.*?)\n/',  '<h5>$1</h5>',                       $text);
+    $text = preg_replace('/####\s(.*?)\n/',   '<h4>$1</h4>',                       $text);
+    $text = preg_replace('/###\s(.*?)\n/',    '<h3>$1</h3>',                       $text);
+    $text = preg_replace('/##\s(.*?)\n/',     '<h2>$1</h2>',                       $text);
+    $text = preg_replace('/#\s(.*?)\n/',      '<h1>$1</h1>',                       $text); 
+    $text = preg_replace('/ccc\s(.*?)\n/',    '<center>$1</center>',               $text);
     $text = preg_replace('/---(.*?)\n/',     "<hr>",                              $text);
-    $text = preg_replace('/-- (.*?)\n/',     '<br><i>$1</i>',                     $text);
-    $text = preg_replace('/- (.*?)\n/',      '<br>$1',                            $text);
-    $text = preg_replace('/```(.*?)\n/',     '<b>$1</b>',                         $text);
+    $text = preg_replace('/--\s(.*?)\n/',     '<br><i>$1</i>',                     $text);
+    $text = preg_replace('/-\s\s(.*?)\n/',      '<br>$1',                            $text);
+    $text = preg_replace('/```(.*?)\n/',     '<a href="$1">$1</a>',                         $text);
     $text = preg_replace('/\$(.*)\$/',       "<span class='php_var'>$\$1</span>", $text);
     $text = preg_replace('/;/',              ";\n<br>",                           $text);
+    $text = preg_replace('/\*\*\*\*(.*?)\n/',  "<span class='green'> \$1</span>",     $text);       // 4 звездочки - зеленый
     $text = preg_replace('/\*\*\*(.*?)\n/',  "<span class='red'> \$1</span>",     $text);       // 3 звездочки - красный
     $text = preg_replace('/\*\*(.*?)\*\*/', '<span class="tenten">$1</span>',     $text);       // 2 звездочки - синий болд
     $text = preg_replace('/\*(.*?)\*/',     '<span class="bold">$1</span>',       $text);       // 1 звездочка - болд
-    $text = preg_replace('/\/\/ (.*?)\n/',    "<span class='comment'>// \$1</span>", $text);
+    $text = preg_replace('/\/\/ (.*?)\n/',    "<span class='comment'> \$1</span>", $text);
     $text = preg_replace('/!!! (.*?)\n/',    '<div style="display:none">$1</div>',  $text); 
     $text = preg_replace('/___ (.*?)\n/',    '<small>$1</small>',                    $text); 
     
@@ -214,25 +214,29 @@ $footer = <<<FOOTER
 <footer class="footer mt-auto py-3 bg-dark text-light">
     <div class="container text-center">
         <div class="row">
+            
             <div class="col-md-6">
-                <p>Контактная информация:</p>
-                <p>Email: example@example.com</p>
-                <p>Телефон: +123 456 789</p>
+                <a href="https://opensource.org/licenses/MIT" target="_blank">Лицензия MIT:
+<!--img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/MIT_logo.svg/1280px-MIT_logo.svg.png" alt="MIT License" style="width: 50px; height: auto;"-->
+                    <div class="svg_mit">
+    <img class="svg_mit" src="include/images/mit_icon.svg" alt="MIT License" >
+                    </div>
+                </a>
             </div>
             <div class="col-md-6">
-                <a href="https://opensource.org/licenses/MIT" target="_blank">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/MIT_logo.svg/1280px-MIT_logo.svg.png" alt="MIT License" style="width: 50px; height: auto;">
-             <div class="svg_mit">       
-                    <img src="../../../../aekap.api/images/mit_icon.svg" >
-             </div>                    
-                Лицензия MIT
-                 </a>
+                <h5>Контакты:</h5>
+             
+                <p>Email: ae@c-europe.eu
+                <br>Viber: +420 792 455 840
+                <br>git:  <a href="https://github.com/alexeist/LaTeXP-decoder/">https://github.com/alexeist/LaTeXP-decoder/</a>
+                </p>
             </div>
         </div>
     </div>
-    </div>
-    </div>
-</footer>
+  </footer>
+ </div>
+</div>
+
 FOOTER;
 
 $htmlOutput = <<<HTML
@@ -259,8 +263,9 @@ $htmlOutput = <<<HTML
         .chatGPT{background-color: #efe; border-radius:10px; border:thin solid black;padding: 10px}
         .comment{color:#999}
         .red{color:red}
+        .green{color:green}
         .bold{font-weight:bold}
-        .svg_mit{height: 50px; width:auto;}
+        .svg_mit{width: 80px;height: auto}
 	</style>
 </head>
 <body>
